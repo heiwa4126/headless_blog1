@@ -2,7 +2,7 @@
 #   filename:  openapi.yaml
 #   timestamp: 2023-07-26T06:15:12+00:00
 
-from __future__ import annotations
+# from __future__ import annotations
 
 from datetime import datetime
 from typing import Optional
@@ -10,16 +10,30 @@ from typing import Optional
 from pydantic import BaseModel
 
 
+# class PostIndex(BaseModel):
+#     id: Optional[int] = None
+#     title: Optional[str] = None
+#     published_at: Optional[datetime] = None
+
+
+# class Post(PostIndex):
+#     content: Optional[str] = None
+
+
 class PostIndex(BaseModel):
-    id: Optional[int] = None
-    title: Optional[str] = None
-    published_at: Optional[datetime] = None
+    id: int
+    title: str
+    published_at: datetime
 
 
 class Post(PostIndex):
-    content: Optional[str] = None
+    content: str
 
 
 class PostInput(BaseModel):
     title: str
     content: str
+
+
+class SimpleError(BaseModel):
+    datail: str
