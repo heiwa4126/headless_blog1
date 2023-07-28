@@ -1,4 +1,4 @@
 #!/bin/sh
 cd $(dirname $0) ; . .venv/bin/activate
 cd src
-uvicorn main:app --reload
+FASTAPI_ENV=production uvicorn main:app

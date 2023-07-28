@@ -1,7 +1,7 @@
+from datetime import datetime, timedelta, timezone
 from typing import Dict
-from interface import Post
 
-from datetime import datetime, timezone, timedelta
+from interface import Post
 
 jst = timezone(timedelta(hours=9))
 
@@ -25,5 +25,19 @@ sample_posts: Dict[int, Post] = {
         "published_at": datetime(2023, 7, 28, 10, 15, 30, tzinfo=jst),
         "content": "This is the content of Sample Post 3.",
     },
+    4: Post(
+        id=4,
+        title="Sample Post 4",
+        published_at=datetime(2023, 7, 29, 10, 15, 30, tzinfo=jst),
+        content="This is the content of Sample Post 4.",
+    ),
+    5: Post(
+        **{
+            "id": 5,
+            "title": "Sample Post 5",
+            "published_at": datetime(2023, 7, 30, 10, 15, 30, tzinfo=jst),
+            "content": "This is the content of Sample Post 5.",
+        }
+    ),
     # 他のサンプルデータ...
 }

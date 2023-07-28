@@ -36,4 +36,4 @@ class PostInput(BaseModel):
 
 
 class SimpleError(BaseModel):
-    datail: str
+    detail: str
